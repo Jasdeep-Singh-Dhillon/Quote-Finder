@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include('partials/head')%>
+
+  <body>
+    <%- include('partials/nav') %>
+      <% for( i=0; i < data.length; i++ ) { %>
+        <div class="card">
+          <h4>
+            <%= data[i].quote %>
+          </h4>
+          <br>
+          <div class='flexBox'>
+            <div>
+              - <a class='authorLink' href="#" id="<%= data[i].authorId %>">
+                <%= data[i].firstName %>
+                  <%= data[i].lastName %>
+              </a>
+            </div>
+            <div>
+              Likes: <%= data[i].likes %>
+            </div>
+          </div>
+        </div>
+        <% } %>
+    <%- include('partials/modal') %>
+  </body>
+
+</html>

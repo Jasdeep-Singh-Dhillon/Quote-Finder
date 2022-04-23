@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include('partials/head')%>
+
+<body>
+  <%- include('partials/nav') %>
+  
+    <div class="grid-container">
+      <% for(i=0; i<authors.length; i++) {%>
+        <div class='card'>
+          <img src='<%= authors[i].portrait %>' alt='Portrait of <%= authors[i].firstName %> <%= authors[i].lastName %>'
+            class='card-img-top' height='280'>
+          <div class='card-body'>
+            <a class='authorLink' href="#" id="<%= authors[i].authorId %>">
+              <%= authors[i].firstName %>
+                <%= authors[i].lastName %>
+            </a>
+          </div>
+        </div>
+        <% } %>
+    </div>
+
+    <%- include('partials/modal') %>
+</body>
+
+</html>

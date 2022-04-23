@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head') %>
+<body>
+<%- include('partials/nav') %>
+    <header>
+        <h1>
+            Quote Add
+        </h1>
+    </header>
+  
+    <form action="/quote/new" method='post' class='card addQuote'>
+      Quote:
+      <textarea type="text" name='quote' class='form-control'></textarea>
+      <br>
+      Author:
+      <select class='form-select' name='authorId'>
+        <option value='0'>Select Author</option>
+            <% for( let i = 0; i < authors.length; i++ ) { %>
+                <option value="<%=authors[i].authorId %>">
+                  <%= authors[i].firstName  %> <%= authors[i].lastName  %>  
+                </option>
+            <% } %>
+      </select>
+      <br>
+      Category:
+      <select class='form-select' name='category'>
+        <option value='0'>Select Category</option>
+            <% for( let i = 0; i < category.length; i++ ) { %>
+                <option value="<%=category[i].category %>">
+                  <%= category[i].category  %>  
+                </option>
+            <% } %>
+      </select>
+      <br>
+      Likes:
+      <input class='form-control' name='likes' type='number'>
+      <br><br>
+      <button class='btn btn-primary'>Add Quote</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+
+    <body>
+        <header>
+            <h1>
+                Updating Author
+            </h1>
+        </header>
+        <form action="/author/edit" method='post' class='card addAuthor'>
+            <div class="d-flex">
+                <div>
+                    <img src="<%= authorInfo[0].portrait%>" alt="Author Image" width='450px' id='authorImg'>
+                </div>
+                <div>
+                    <div class="row">
+                        <input type="hidden" name='authorId' value="<%= authorInfo[0].authorId %>">
+                    </div>
+                    <div class="row">
+                        <div class="col-auto">
+                            First Name:
+                        </div>
+                        <div class="col-auto">
+                            <input type="text" name='firstName' class='form-control'
+                                value="<%= authorInfo[0].firstName %>">
+                        </div>
+                        <div class="col-auto">
+                            Last Name:
+                        </div>
+                        <div class="col-auto">
+                            <input type="text" name='lastName' class='form-control'
+                                value="<%= authorInfo[0].lastName %>">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-auto">
+                            Date of Birth:
+                        </div>
+                        <div class="col-auto">
+                            <input type="date" name='dob' class='form-control' value="<%= authorInfo[0].dobISO %>">
+                        </div>
+                        <div class="col-auto">
+                            Date of Death:
+                        </div>
+                        <div class="col-auto">
+                            <input type="date" name='dod' class='form-control' value="<%= authorInfo[0].dodISO %>">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-auto">
+                            Sex:
+                        </div>
+                        <div class="col-auto">
+                            <input type="radio" name='sex' class='form-check-input' id='male' value='M'
+                                <%if(authorInfo[0].sex=='M' ) { %>
+                            checked
+                            <% } %>
+                                >
+                                <label for='male'>Male</label>
+                                &nbsp;
+                                <input type="radio" name='sex' class='form-check-input' id='female' value='F'
+                                    <%=(authorInfo[0].sex=='F' )?"checked":"" %>
+                                >
+                                <label for='female'>Female</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-auto">
+                            Profession:
+                        </div>
+                        <div class="col-auto">
+                            <input type="text" name='profession' class='form-control'
+                                value="<%= authorInfo[0].profession %>">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-auto">
+                            Country:
+                        </div>
+                        <div class="col-auto">
+                            <input type="text" name='country' class='form-control' value="<%= authorInfo[0].country %>">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-auto">
+                            Portrait:
+                        </div>
+                        <div class="col-auto">
+                            <input type="text" name='portrait' class='form-control'
+                                value="<%= authorInfo[0].portrait %>">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-auto">
+                            Biography:
+                        </div>
+                        <div class="col-auto">
+                            <textarea type="text" name='biography' class='form-control'>
+                    <%= authorInfo[0].biography %>
+                </textarea>
+                        </div>
+                    </div>
+                    <button class='btn btn-primary'>Update Author</button>
+                </div>
+            </div>
+        </form>
+        <%= (typeof message != 'undefined')?message:"" %>
+    </body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head') %>
+
+<body>
+<%- include('partials/nav') %>
+    <header>
+        <h1>
+            Author Add
+        </h1>
+    </header>
+  
+    <form action="/author/new" method='post' class='card addAuthor'>
+        <div class="row">
+            <div class="col-auto">
+                First Name:
+            </div>
+            <div class="col-auto">
+                <input type="text" name='firstName' class='form-control'>
+            </div>
+            <div class="col-auto">
+                Last Name:
+            </div>
+            <div class="col-auto">
+                <input type="text" name='lastName' class='form-control'>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-auto">
+                Date of Birth:
+            </div>
+            <div class="col-auto">
+                <input type="date" name='dob' class='form-control'>
+            </div>
+            <div class="col-auto">
+                Date of Death:
+            </div>
+            <div class="col-auto">
+                <input type="date" name='dod' class='form-control'>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-auto">
+                Sex:
+            </div>
+            <div class="col-auto">
+                <input type="radio" name='sex' class='form-check-input' id='male' value='M'>
+                <label for='male'>Male</label>
+                <input type="radio" name='sex' class='form-check-input' id='female' value='F'>
+                <label for='female'>Female</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-auto">
+                Profession:
+            </div>
+            <div class="col-auto">
+                <input type="text" name='profession' class='form-control'>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-auto">
+                Country:
+            </div>
+            <div class="col-auto">
+                <input type="text" name='country' class='form-control'>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-auto">
+                Portrait:
+            </div>
+            <div class="col-auto">
+                <input type="text" name='portrait' class='form-control'>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-auto">
+                Biography:
+            </div>
+            <div class="col-auto">
+                <textarea type="text" name='biography' class='form-control'>
+                
+                </textarea>
+            </div>
+        </div>
+        <button class='btn btn-primary'>Add Author</button>
+    </form>
+</body>
+</html>

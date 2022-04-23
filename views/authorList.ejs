@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+<body>
+    <header>
+        <h1>
+            Update/Delete Authors
+        </h1>
+    </header>
+    <% for( let i = 0; i < authors.length; i++ ) { %>
+        <div class="card d-flex">
+            <div>
+                <a href="/author/edit?authorId=<%= authors[i].authorId%>">
+                    <img src="https://cdn.icon-icons.com/icons2/2621/PNG/512/gui_edit_icon_157165.png" alt="edit" width="25px" class="editImg">
+                </a>
+            </div>
+            <div>
+                <a href="/author/delete?authorId=<%= authors[i].authorId%>">
+                    <img src="https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/452/external-delete-multimedia-kiranshastry-lineal-color-kiranshastry.png" alt="edit" width="25px" class="deleteImg">
+                </a>
+            </div>
+            <div>
+                <%= authors[i].firstName %>
+                <%= authors[i].lastName %>
+            </div>
+        </div>
+    <% } %>
+</body>
+</html>
